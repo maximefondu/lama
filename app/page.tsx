@@ -1,3 +1,13 @@
+import Link from 'next/link'
+
 export default function Home() {
-    return <div className={'m-12'}>Hello</div>
+    return (
+        <div>
+            <ul>
+                <li>
+                    <Link href="/category">Category</Link>
+                </li>
+            </ul>
+        </div>
+    )
 }

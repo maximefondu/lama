@@ -9,3 +9,12 @@
 - prisma db push
 - prisma studio
 
+### React hook form
+
+Form
+
+### Zod
+
+Form validator
+
+### react-hot-toast
