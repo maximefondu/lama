@@ -33,6 +33,7 @@ module.exports = {
             transparent: 'transparent',
             white: '#ffffff',
             main: '#303030',
+            error: '#D23535',
             primary: '#369FFF',
             grey: {
                 200: '#F4F4F4',
@@ -55,6 +56,28 @@ module.exports = {
             none: 0,
             DEFAULT: '4px',
             md: '8px'
+        },
+        maxWidth: {
+            xxs: '42rem',
+            xs: '54rem',
+            sm: '72rem',
+            md: '92rem'
+        },
+        keyframes: {
+            shake: {
+                '0%, 100%': {
+                    transform: 'translateX(0px)'
+                },
+                '25%': {
+                    transform: 'translateX(3px)'
+                },
+                '75%': {
+                    transform: 'translateX(-3px)'
+                }
+            }
+        },
+        animation: {
+            shake: 'shake 200ms 2 ease-in-out'
         },
         extend: {}
     },

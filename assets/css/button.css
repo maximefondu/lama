@@ -1,0 +1,13 @@
+.button {
+    @apply bg-primary;
+    @apply text-white font-bold;
+    @apply px-8 py-4;
+    @apply rounded transition-all;
+}
+
+.button._link {
+    @apply bg-transparent text-grey-600 font-normal;
+    @apply p-0;
+    @apply underline rounded-none;
+    @apply hover:text-primary;
+}
