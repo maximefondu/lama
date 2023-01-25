@@ -15,7 +15,7 @@ export default function RootLayout({
                 content="width=device-width, initial-scale=1"
                 name="viewport"
             />
-            <body className={'min-h-screen bg-grey-200 font-main text-md flex'}>
+            <body className={'min-h-screen bg-grey-200 font-main text-sm flex'}>
                 <Menu />
                 <section className={'w-full p-20'}>
                     <QueryClient>{children}</QueryClient>

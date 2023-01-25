@@ -1,15 +1,23 @@
+import Link from 'next/link'
+
 type Props = {
     children: any
-    type: 'submit' | 'button'
-    className: string
+    className?: string
+    type?: 'submit' | 'button'
+    href?: string
 }
-export const Button = (props: Props) => {
+export const Button = ({children, className, type = 'submit', href = ''}: Props) => {
     return (
-        <button
-            type={props.type}
-            className={`${props.className} bg-primary rounded text-white text-sm font-bold px-8 py-4`}
-        >
-            {props.children}
-        </button>
+        <>
+            {href ? (
+                <Link className={`${className} button`} href={href}>
+                    {children}
+                </Link>
+            ) : (
+                <button type={type} className={`${className} button`}>
+                    {children}
+                </button>
+            )}
+        </>
     )
 }

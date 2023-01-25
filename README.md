@@ -1,20 +1,28 @@
-## Lama
+# Lama
 
 <img src="https://img.shields.io/badge/Node-%3E%3D16.0.0-green">
 <img src="https://img.shields.io/badge/Next-13-orange">
 
-### Prisma to database
+## Tools
+### React Hook  From
+https://react-hook-form.com/
 
-- prisma generate (typescript)
-- prisma db push
-- prisma studio
-
-### React hook form
-
-Form
+React hook form to create form.
 
 ### Zod
+https://zod.dev/
 
-Form validator
+Zod to validation fields form.
+
+### Prisma
+https://www.prisma.io/
+
+Prisma to communicate with database.
+
+#### Commands
+- ````prisma generate```` Generate tools to Typescript
+- ````prisma db push```` Push database
+- ````prisma studio```` Run server to view database
 
 ### react-hot-toast
+https://react-hot-toast.com/

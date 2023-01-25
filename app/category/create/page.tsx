@@ -1,51 +1,38 @@
 'use client'
 
-import { Box } from '@components/Box'
-import { Field } from '@components/form/Field'
-
-import { SubmitHandler, useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import * as z from 'zod'
-
 import { Prisma } from '.prisma/client'
 import CategoryCreateInput = Prisma.CategoryCreateInput
-import { useCreateCategory } from '../../../features/categories/hooks/use-create-category'
-import { Button } from '@components/Button'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
 
-const schema = z.object({
-    name: z.string().min(1, { message: 'Required' })
-})
+import { useCreateCategory } from '@features/category/hooks/use-create-category'
+import { schemaCreateCategory } from '@features/category/schema/create-category'
+
+import { Box } from '@components/Box'
+import { Title } from '@components/Title'
+import { FieldsCreateOrUpdateCategory } from '@components/category/FieldsCreateOrUpdateCategory'
 
 export default function Page() {
-    const { register, handleSubmit } = useForm({
+    const { mutateAsync: createCategory } = useCreateCategory()
+    const useFormObject = useForm({
         defaultValues: {
             name: ''
         },
-        resolver: zodResolver(schema)
+        resolver: zodResolver(schemaCreateCategory())
     })
 
-    const { mutateAsync: createCategory, isSuccess } = useCreateCategory()
     const onSubmit: SubmitHandler<CategoryCreateInput> = async (data) => {
         await createCategory(data)
     }
 
     return (
-        <>
-            <h1 className={'text-2xl font-bold mb-20'}>Create category</h1>
+        <div className={'max-w-xs'}>
+            <Title link={{ title: 'Category list', href: '/category' }}>Create category</Title>
             <Box>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <Field
-                        register={register}
-                        label="Name"
-                        name="name"
-                        id="name"
-                        placeholder="Fish"
-                    ></Field>
-                    <Button className={'w-full mt-8'} type={'submit'}>
-                        Validate
-                    </Button>
+                <form onSubmit={useFormObject.handleSubmit(onSubmit)}>
+                    <FieldsCreateOrUpdateCategory useFormObject={useFormObject} />
                 </form>
             </Box>
-        </>
+        </div>
     )
 }
