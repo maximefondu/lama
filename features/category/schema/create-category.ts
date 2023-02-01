@@ -6,6 +6,6 @@ export const schemaCreateCategory = () => {
             .string({
                 invalid_type_error: 'Name is not a string !'
             })
-            .nonempty('Name is required !')
+            .min(1, 'Name is required !')
     })
 }

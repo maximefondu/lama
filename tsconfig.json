@@ -36,6 +36,9 @@
             ],
             "@features/*": [
                 "features/*"
+            ],
+            "@svg/*": [
+                "assets/svg/*"
             ]
         }
     },

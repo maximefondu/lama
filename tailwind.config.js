@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ['./app/**/*.{jsx,tsx}', './components/**/*.{jsx,tsx}'],
+    content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
     theme: {
         screens: {
             full: {
@@ -33,6 +33,7 @@ module.exports = {
             transparent: 'transparent',
             white: '#ffffff',
             main: '#303030',
+            success: '#6DDB99',
             error: '#D23535',
             primary: '#369FFF',
             grey: {
@@ -62,6 +63,9 @@ module.exports = {
             xs: '54rem',
             sm: '72rem',
             md: '92rem'
+        },
+        boxShadow: {
+            md: '0 0 15px 8px rgba(0, 0, 0, 0.02)'
         },
         keyframes: {
             shake: {

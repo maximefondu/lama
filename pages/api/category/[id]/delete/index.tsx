@@ -7,7 +7,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse<Catego
     await prisma.category.delete({
         where: { id: Number(request.query.id) }
     })
-    response.status(200)
+    response.status(200).end()
 }
 
 export default handler

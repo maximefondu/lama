@@ -2,8 +2,7 @@
 
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Category, Prisma } from '.prisma/client'
-import CategoryUpdateInput = Prisma.CategoryUpdateInput
+import { Category } from '.prisma/client'
 
 import { schemaUpdateCategory } from '@features/category/schema/update-category'
 import { useUpdateCategory } from '@features/category/hooks/use-update-category'
@@ -19,10 +18,10 @@ export const FormUpdateCategory = ({ category }: Props) => {
 
     const useFormObject = useForm({
         defaultValues: category,
-        resolver: zodResolver(schemaUpdateCategory())
+        resolver: zodResolver(schemaUpdateCategory)
     })
 
-    const onSubmit: SubmitHandler<CategoryUpdateInput> = async (data) => {
+    const onSubmit: SubmitHandler<Category> = async (data) => {
         await updateCategory(data)
     }
 

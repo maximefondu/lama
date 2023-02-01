@@ -5,12 +5,13 @@ type Props = {
     className?: string
     type?: 'submit' | 'button'
     href?: string
+    prefetch?: boolean
 }
-export const Button = ({children, className, type = 'submit', href = ''}: Props) => {
+export const Button = ({ children, className, type = 'submit', href = '', prefetch = true }: Props) => {
     return (
         <>
             {href ? (
-                <Link className={`${className} button`} href={href}>
+                <Link prefetch={prefetch} className={`${className} button`} href={href}>
                     {children}
                 </Link>
             ) : (
