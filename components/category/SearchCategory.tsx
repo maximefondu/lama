@@ -3,7 +3,7 @@
 import { ChangeEvent } from 'react'
 import { useRouter } from 'next/navigation'
 
-import Search from '@svg/search.svg'
+import SearchIcon from '@svg/search.svg'
 
 export const SearchCategory = () => {
     const router = useRouter()
@@ -28,7 +28,7 @@ export const SearchCategory = () => {
                     placeholder={'Get category'}
                     onChange={search}
                 />
-                <Search className={'w-6 pointer-events-none absolute top-1/2 right-8 -translate-y-1/2'} />
+                <SearchIcon className={'w-6 pointer-events-none absolute top-1/2 right-8 -translate-y-1/2'} />
             </label>
         </div>
     )

@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+    content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}', '!./node_modules'],
     theme: {
         screens: {
             full: {
@@ -38,6 +38,7 @@ module.exports = {
             primary: '#369FFF',
             grey: {
                 200: '#F4F4F4',
+                300: '#E0E0E0',
                 600: '#BDBDBD'
             }
         },

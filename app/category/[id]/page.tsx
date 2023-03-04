@@ -15,7 +15,7 @@ export default async function Page({ params }: Props) {
 
     return (
         <div className={'max-w-xs'}>
-            <Title link={{ title: 'Category list', href: '/category' }}>{category.name}</Title>
+            <Title link={{ title: 'Categories', href: '/category' }}>{category.name}</Title>
             <Box>
                 <FormUpdateCategory category={category} />
             </Box>

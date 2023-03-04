@@ -22,7 +22,7 @@ export default async function Page({ searchParams }: Props) {
 
     return (
         <div className={'max-w-md'}>
-            <Title button={{ title: 'Add category', href: '/category/create' }}>Category List</Title>
+            <Title button={{ title: 'Add category', href: '/category/create' }}>Categories</Title>
 
             <SearchCategory />
 

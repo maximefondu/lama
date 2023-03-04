@@ -35,7 +35,7 @@ export default function Page() {
 
     return (
         <div className={'max-w-xs'}>
-            <Title link={{ title: 'Category list', href: '/category' }}>Create category</Title>
+            <Title link={{ title: 'Categories', href: '/category' }}>Create category</Title>
             <Box>
                 <form onSubmit={useFormObject.handleSubmit(onSubmit)}>
                     <FieldsCreateOrUpdateCategory useFormObject={useFormObject} />
