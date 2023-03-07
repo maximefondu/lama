@@ -43,8 +43,8 @@ export const Select = ({ register, errors, label, name, id, options, placehoder 
                     </select>
                     <ArrowIcon className={'absolute top-1/2 right-8 -translate-y-1/2 w-8'} />
                 </div>
+                {error && <p className={'mt-2 text-error font-medium'}>{error}</p>}
             </div>
-            {error && <p className={'mt-2 text-error font-medium'}>{error}</p>}
         </>
     )
 }

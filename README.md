@@ -10,6 +10,8 @@ https://react-hook-form.com/
 React hook form to create form.
 
 ### Zod
+or YUP ?
+
 https://zod.dev/
 
 Zod to validation fields form.

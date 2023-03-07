@@ -20,17 +20,25 @@ export const schemaCreateCustomer = () => {
         phone: z.string({
             invalid_type_error: 'Phone is not a string !'
         }),
-        address: z.string({
-            invalid_type_error: 'Address is not a string !'
-        }),
-        zip: z.string({
-            invalid_type_error: 'Zip is not a string !'
-        }),
-        city: z.string({
-            invalid_type_error: 'City is not a string !'
-        }),
-        country: z.string({
-            invalid_type_error: 'Country is not a string !'
-        })
+        address: z
+            .string({
+                invalid_type_error: 'Address is not a string !'
+            })
+            .min(1, 'Address is required !'),
+        zip: z
+            .string({
+                invalid_type_error: 'Zip is not a string !'
+            })
+            .min(1, 'Zip is required !'),
+        city: z
+            .string({
+                invalid_type_error: 'City is not a string !'
+            })
+            .min(1, 'City is required !'),
+        country: z
+            .string({
+                invalid_type_error: 'Country is not a string !'
+            })
+            .min(1, 'Country is required !')
     })
 }

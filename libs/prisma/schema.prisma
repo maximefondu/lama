@@ -11,25 +11,41 @@ datasource db {
 }
 
 model Customer {
-  id   Int    @id @default(autoincrement())
-  firstname String
-  lastname String
-  company String
+  id         Int    @id @default(autoincrement())
+  firstname  String
+  lastname   String
+  company    String
   vat_number String
-  email String
-  phone String
-  address String
-  zip String
-  city String
-  country String
+  email      String
+  phone      String
+  address    String
+  zip        String
+  city       String
+  country    String
+}
+
+model Ingredient {
+  id         Int      @id @default(autoincrement())
+  name       String
+  unit       Unit     @relation(fields: [unitId], references: [id])
+  unitId     Int
+  category   Category @relation(fields: [categoryId], references: [id])
+  categoryId Int
 }
 
 model Category {
-  id   Int    @id @default(autoincrement())
-  name String
+  id         Int          @id @default(autoincrement())
+  name       String
+  Ingredient Ingredient[]
 }
 
 model Country {
   id   Int    @id @default(autoincrement())
   name String
+}
+
+model Unit {
+  id         Int          @id @default(autoincrement())
+  name       String
+  Ingredient Ingredient[]
 }

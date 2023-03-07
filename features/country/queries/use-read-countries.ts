@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from 'react-query'
+import { useQuery } from 'react-query'
 import { Country } from '.prisma/client'
 
 const readCountries = async (): Promise<Country[]> => {
